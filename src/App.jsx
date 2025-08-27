@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import HR from "./Services/HR";
 import Feature from "./components/Feature";
 import Client from "./components/Client";
 import About from "./pages/About";
@@ -18,6 +19,7 @@ function App() {
           element={
             <>
               <Hero />
+              
               <Feature />
               <Client />
               <Footer/>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
+         <Route path="/services" element={<HR />} />
       </Routes>
     </div>
   );

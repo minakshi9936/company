@@ -45,17 +45,15 @@ const Footer = () => {
           <p className="text-gray-300 text-sm leading-relaxed">
             <strong>Head Office:</strong> B114, Ground Floor, Sector 64, Noida - 201301 <br />
             <strong>Phone:</strong> 7972867943 <br />
-            <strong>Email:</strong> info@vishvamindia.com <br /><br />
-            <strong>Mumbai Branch:</strong> 301, Durgesh Park, Kalher, Bhiwandi - 421302 <br />
-            <strong>Phone:</strong> 09718354082 <br />
-            <strong>Email:</strong> info@vishvamindia.com
+            <strong>Email:</strong> neha@abggroup.in <br /><br />
+
           </p>
         </div>
 
         {/* Right Side Logo + Social Media */}
         <div className="mt-8 md:mt-0 flex flex-col items-center md:items-end">
           {/* Logo */}
-          <img src="/src/assets/logo.png" alt="Company Logo" className="w-38 mb-4" />
+          <img src="/src/assets/logo2.png" alt="Company Logo" className="w-38 mb-4" />
 
           {/* Social Icons */}
           <div className="flex space-x-10">
@@ -68,7 +66,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/abg-group2711/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               <FaLinkedinIn size={22} />
             </a>
-            <a href="https://wa.me/message/5SVJCZLDCEE7H1" target="_blank" rel="noopener noreferrer" className="hover:text-green-500">
+            <a href="https://wa.me/7972867943" target="_blank" rel="noopener noreferrer" className="hover:text-green-500">
               <FaWhatsapp size={22} />
             </a>
           </div>

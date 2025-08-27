@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaBuilding,
   FaUsers,
   FaHandshake,
   FaClipboardCheck,
@@ -8,9 +7,51 @@ import {
   FaLeaf,
   FaTruck,
   FaIndustry,
+  FaShieldAlt,
+  FaGlobeAsia,
+  FaBalanceScale,
+  FaChartLine,
+  FaPhoneAlt,
+  FaFileAlt,
+  FaCheckCircle,
+  FaBuilding,
+  FaHotel,
+  FaHospital,
+  FaUniversity,
+  FaShoppingBag,
+  FaPlane,
+  FaHome,
+  FaUtensils,
 } from "react-icons/fa";
 
 export default function Feature() {
+  const whyChooseUs = [
+    { icon: <FaBalanceScale className="text-orange-500 text-3xl" />, label: "Integrity" },
+    { icon: <FaHandshake className="text-blue-500 text-3xl" />, label: "Transparency" },
+    { icon: <FaUsers className="text-green-500 text-3xl" />, label: "Experienced Team" },
+    { icon: <FaGlobeAsia className="text-purple-500 text-3xl" />, label: "PAN India" },
+    { icon: <FaShieldAlt className="text-red-500 text-3xl" />, label: "Safety & Compliance" },
+    { icon: <FaLeaf className="text-green-600 text-3xl" />, label: "Sustainability" },
+  ];
+
+  const clientEngagement = [
+    { icon: <FaUsers className="text-blue-500 text-3xl" />, label: "Dedicated Managers" },
+    { icon: <FaChartLine className="text-orange-500 text-3xl" />, label: "Performance Reviews" },
+    { icon: <FaPhoneAlt className="text-green-500 text-3xl" />, label: "24x7 Support" },
+    { icon: <FaFileAlt className="text-purple-500 text-3xl" />, label: "Transparent Reporting" },
+  ];
+
+  const industries = [
+    { icon: <FaBuilding className="text-orange-500 text-3xl" />, label: "Business Parks" },
+    { icon: <FaHotel className="text-blue-500 text-3xl" />, label: "Hospitality & Hotels" },
+    { icon: <FaHospital className="text-red-500 text-3xl" />, label: "Healthcare & Hospitals" },
+    { icon: <FaUniversity className="text-purple-500 text-3xl" />, label: "Educational Institutions" },
+    { icon: <FaShoppingBag className="text-green-500 text-3xl" />, label: "Retail & Shopping Malls" },
+    { icon: <FaPlane className="text-indigo-500 text-3xl" />, label: "Airports & Aviation" },
+    { icon: <FaHome className="text-pink-500 text-3xl" />, label: "Residential Societies" },
+    { icon: <FaUtensils className="text-yellow-500 text-3xl" />, label: "Food & Beverage Industry" },
+  ];
+
   return (
     <section className="bg-gradient-to-b from-orange-50 to-white py-20 px-6 lg:px-24">
       {/* Title */}
@@ -19,50 +60,70 @@ export default function Feature() {
       </h1>
 
       {/* About Us */}
-      <div className="mb-20 text-center max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-orange-600 mb-6">About Us</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Vishvam Management Services Pvt. Ltd. is a professionally managed
-          company delivering end-to-end Facility Management and Specialized
-          Supply Services to corporates, institutions, residential societies, and
-          industrial clients across India. With a focus on quality, efficiency, and
-          sustainability, we help organizations streamline operations so they can
-          focus on their core objectives.
-        </p>
+<div className="mb-20 text-center max-w-4xl mx-auto">
+  <h2 className="text-2xl font-semibold text-orange-600 mb-6">About Us</h2>
+  <p className="text-gray-700 leading-relaxed text-lg mb-6">
+    At <span className="font-semibold">ABG Group</span>, HR isn’t just a service—
+    it’s the backbone of every business we support. We started this company
+    with one clear thought: <span className="italic">Hiring shouldn’t be mechanical—it should feel human, personal, and aligned with real business needs.</span>
+  </p>
+ 
+  <p className="text-gray-700 leading-relaxed text-lg mb-6">
+    We work like an extension of your team—quietly, consistently, and fully aligned with your pace.
+    Sometimes hiring means urgency, sometimes it needs patience—and we’re equally
+    comfortable with both.
+  </p>
+  <p className="text-gray-700 leading-relaxed text-lg">
+    Our clients trust us because we stay involved from start to finish, communicate clearly
+    and honestly, and take full ownership of every mandate. If something’s not working,
+    we fix it fast. For us, this isn’t just business—it’s partnership. It’s about building
+    something real and lasting, one hire at a time.
+  </p>
+</div>
+
+
+     {/* Why Choose Us */}
+
+<div className="mb-20 max-w-6xl mx-auto">
+  <h2 className="text-2xl font-semibold text-orange-600 mb-8 flex items-center">
+    <FaHandshake className="mr-2 text-orange-500" /> Why Choose Us?
+  </h2>
+  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+    {whyChooseUs.map((item, idx) => (
+      <div
+        key={idx}
+        className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition transform hover:-translate-y-1 w-full sm:w-72"
+      >
+        {item.icon}
+        <p className="mt-3 text-gray-700 font-medium">{item.label}</p>
       </div>
+    ))}
+  </div>
+</div>
 
-      {/* Why Us + Client Engagement */}
-      <div className="grid lg:grid-cols-2 gap-12 mb-20 max-w-6xl mx-auto">
-        <div className="bg-white shadow-lg rounded-xl p-8 border-t-4 border-orange-500">
-          <h2 className="text-xl font-semibold text-orange-600 mb-5 flex items-center">
-            <FaHandshake className="mr-2 text-orange-500" /> Why Choose Us?
-          </h2>
-          <ul className="space-y-3 text-gray-700 text-base">
-            <li>✔ Integrity & Client-Centric Approach</li>
-            <li>✔ Transparent Operations & Strong Vendor Network</li>
-            <li>✔ Experienced Team with Deep Domain Expertise</li>
-            <li>✔ PAN India Presence with Scalable Capacity</li>
-            <li>✔ Commitment to Compliance, Safety & Hygiene</li>
-            <li>✔ Green & Sustainable Practices</li>
-          </ul>
-        </div>
 
-        <div className="bg-white shadow-lg rounded-xl p-8 border-t-4 border-blue-500">
-          <h2 className="text-xl font-semibold text-blue-600 mb-5 flex items-center">
-            <FaClipboardCheck className="mr-2 text-blue-500" /> Client Engagement
-          </h2>
-          <ul className="space-y-3 text-gray-700 text-base">
-            <li>✔ Dedicated Account Managers</li>
-            <li>✔ Monthly Performance Reviews</li>
-            <li>✔ 24x7 Support and Emergency Response</li>
-            <li>✔ Transparent Reporting & Documentation</li>
-          </ul>
+
+      {/* Client Engagement */}
+      <div className="mb-20 max-w-6xl mx-auto">
+        <h2 className="text-2xl font-semibold text-blue-600 mb-8 flex items-center">
+          <FaClipboardCheck className="mr-2 text-blue-500" /> Client Engagement
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {clientEngagement.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition transform hover:-translate-y-1"
+            >
+              {item.icon}
+              <p className="mt-3 text-gray-700 font-medium">{item.label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Key Offerings */}
       <div className="mb-20 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-semibold text-center text-orange-600 mb-10">
+        <h2 className="text-4xl font-semibold text-center text-orange-600 mb-10">
           Key Offerings
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
@@ -71,12 +132,12 @@ export default function Feature() {
               <FaCogs className="mr-2 text-orange-500" /> Integrated Facility Management
             </h3>
             <ul className="space-y-2 text-gray-600">
-              <li>Housekeeping & Janitorial Services</li>
-              <li>Security & Surveillance Services</li>
-              <li>Technical Maintenance (Electrical, Plumbing, HVAC)</li>
-              <li>Gardening & Landscaping</li>
-              <li>Pest Control & Waste Management</li>
-              <li>Front Office & Helpdesk Operations</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Housekeeping & Janitorial Services</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Security & Surveillance Services</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Technical Maintenance (Electrical, Plumbing, HVAC)</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Gardening & Landscaping</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Pest Control & Waste Management</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Front Office & Helpdesk Operations</li>
             </ul>
           </div>
 
@@ -85,28 +146,33 @@ export default function Feature() {
               <FaTruck className="mr-2 text-blue-500" /> Supply Chain & Procurement
             </h3>
             <ul className="space-y-2 text-gray-600">
-              <li>Bio-enzyme & Eco-friendly Cleaning Solutions</li>
-              <li>Stationery and Office Supplies</li>
-              <li>Tissue Paper & Hygiene Products</li>
-              <li>Electrical & Maintenance Consumables</li>
-              <li>Corporate Gifting & Custom Packaging</li>
-              <li>Green Products for Sustainability Initiatives</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Bio-enzyme & Eco-friendly Cleaning Solutions</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Stationery and Office Supplies</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Tissue Paper & Hygiene Products</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Electrical & Maintenance Consumables</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Corporate Gifting & Custom Packaging</li>
+              <li className="flex items-center"><FaCheckCircle className="text-green-500 mr-2" /> Green Products for Sustainability Initiatives</li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Industries We Serve */}
-      <div className="text-center max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-orange-600 mb-6 flex justify-center items-center">
+      <div className="text-center max-w-7xl mx-auto">
+        <h2 className="text-4xl font-semibold text-orange-600 mb-10 flex justify-center items-center">
           <FaIndustry className="mr-2 text-orange-500" /> Industries We Serve
         </h2>
-        <p className="text-gray-700 text-lg leading-relaxed">
-          Business Parks, Hospitality & Hotels, Healthcare & Hospitals, 
-          Educational Institutions, Retail & Shopping Malls, Airports & Aviation, 
-          Residential Societies, Food & Beverage Industry
-        </p>
+        <br/>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {industries.map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center">
+              {item.icon}
+              <p className="mt-3 text-gray-700 font-medium">{item.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+

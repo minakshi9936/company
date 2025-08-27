@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Client() {
-  // List of client logo images
   const clients = [
     "/src/assets/Clients/1.png",
     "/src/assets/Clients/2.jpg",
@@ -35,15 +34,8 @@ export default function Client() {
     "/src/assets/Clients/29.png",
   ];
 
-  // Animation variants
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: (i) => ({
-      opacity: 1,
-      scale: 1,
-      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
-    }),
-  };
+  // Duplicate the logos for infinite scrolling
+  const duplicatedClients = [...clients, ...clients];
 
   return (
     <section className="relative bg-gradient-to-b from-orange-50 via-white to-orange-100 py-20 px-6 lg:px-24 overflow-hidden">
@@ -60,26 +52,26 @@ export default function Client() {
         the brands and companies we’ve worked with.
       </p>
 
-      {/* Grid of Clients */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 items-center justify-items-center max-w-7xl mx-auto relative z-10">
-        {clients.map((logo, index) => (
-          <motion.div
-            key={index}
-            className="flex items-center justify-center w-40 h-28 bg-white/40 backdrop-blur-md shadow-lg rounded-2xl p-4 
-                       hover:scale-105 hover:shadow-2xl hover:bg-white/70 transition-all duration-300 ease-in-out"
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={index}
-          >
-            <img
-              src={logo}
-              alt={`Client ${index + 1}`}
-              className="max-h-16 object-contain opacity-80 hover:opacity-100 transition duration-300"
-            />
-          </motion.div>
-        ))}
+      {/* Infinite Scrolling Carousel */}
+      <div className="overflow-hidden relative">
+        <motion.div
+          className="flex gap-10 w-max"
+          animate={{ x: ["0%", "-50%"] }} // slide left continuously
+          transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+        >
+          {duplicatedClients.map((logo, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center w-40 h-28 bg-white/40 backdrop-blur-md shadow-lg rounded-2xl p-4"
+            >
+              <img
+                src={logo}
+                alt={`Client ${index + 1}`}
+                className="max-h-16 object-contain opacity-80 hover:opacity-100 transition duration-300"
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

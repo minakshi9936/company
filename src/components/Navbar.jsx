@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="/src/assets/logo.png" alt="Logo" className="w-20 h-12" />
+          <img src="/src/assets/logo2.png" alt="Logo" className="w-20 h-10" />
         </div>
 
         {/* Desktop Nav */}
