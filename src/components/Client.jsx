@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 export default function Client() {
   const clients = [
     "/src/assets/Clients/1.png",
