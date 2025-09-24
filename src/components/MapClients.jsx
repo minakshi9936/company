@@ -1,9 +1,8 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect } from "react";
 
-// ✅ Fix default marker icon
+// Fix default marker icon in Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -98,20 +97,6 @@ const clients = [
 
 ];
 
-// ✅ Component to auto-fit map to markers
-function FitBounds({ clients }) {
-  const map = useMap();
-
-  useEffect(() => {
-    if (clients.length > 0) {
-      const bounds = L.latLngBounds(clients.map(c => [c.lat, c.lng]));
-      map.fitBounds(bounds, { padding: [50, 50] });
-    }
-  }, [clients, map]);
-
-  return null;
-}
-
 export default function MapClients() {
   return (
     <div className="w-full min-h-screen bg-black text-yellow-400 px-6 py-12">
@@ -122,35 +107,33 @@ export default function MapClients() {
           <h2 className="text-2xl font-extrabold mb-4 text-center text-yellow-400">
             Presence in India
           </h2>
+<MapContainer
+  center={[22.9734, 78.6569]} // Center of India
+  zoom={5}
+  scrollWheelZoom={false}
+  className="h-[420px] w-full rounded-xl overflow-hidden border-2 border-yellow-400"
+>
+  <TileLayer
+    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+    attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a><a href="https://stadiamaps.com/"></a>'
+    subdomains={["a", "b", "c", "d"]}
+  />
 
-          <MapContainer
-            center={[22.9734, 78.6569]} // temporary fallback
-            zoom={5}
-            scrollWheelZoom={false}
-            className="h-[420px] w-full rounded-xl overflow-hidden border-2 border-yellow-400"
-          >
-            <TileLayer
-  url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=YOUR_API_KEY`}
-  attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>, &copy; OpenStreetMap contributors'
-/>
+  {clients.map((client) => (
+    <Marker key={client.id} position={[client.lat, client.lng]}>
+      <Popup>
+        <strong style={{ color: "blue" }}>{client.district}</strong>
+        <br />
+        {client.pin !== "-" ? (
+          <span style={{ color: "blue" }}>PIN: {client.pin}</span>
+        ) : (
+          <span style={{ color: "blue" }}>Multiple Areas</span>
+        )}
+      </Popup>
+    </Marker>
+  ))}
+</MapContainer>
 
-            {/* Auto-fit all clients */}
-            <FitBounds clients={clients} />
-
-            {clients.map((client) => (
-              <Marker key={client.id} position={[client.lat, client.lng]}>
-                <Popup>
-                  <strong style={{ color: "blue" }}>{client.district}</strong>
-                  <br />
-                  {client.pin !== "-" ? (
-                    <span style={{ color: "blue" }}>PIN: {client.pin}</span>
-                  ) : (
-                    <span style={{ color: "blue" }}>Multiple Areas</span>
-                  )}
-                </Popup>
-              </Marker>
-            ))}
-          </MapContainer>
         </div>
 
         {/* Right Box - Text */}
