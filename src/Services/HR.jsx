@@ -159,6 +159,8 @@ const lifeImages = [
   "/life at abg/abg11.jpg",
   "/life at abg/abg12.jpg",
   "/life at abg/abg13.jpg",
+  "/life at abg/abg14.jpg",
+  "/life at abg/abg15.jpg",
   
 ];
 

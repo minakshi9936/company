@@ -11,7 +11,7 @@ export default function Navbar() {
         {/* ✅ Logo wrapped in Link for redirect + responsive */}
         <Link to="/" className="flex items-center">
           <img
-            src="/src/assets/logo2.png"
+            src="/images/logo2.png"
             alt="Logo"
             className="h-10 sm:h-12 md:h-14 w-30 object-contain cursor-pointer"
           />

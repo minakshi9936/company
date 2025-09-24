@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       className="relative bg-black text-white py-20 px-6 lg:px-20"
-      style={{ backgroundImage: "url('/src/assets/images/bg.png')" }}
+      style={{ backgroundImage: "url('/images/bg.png')" }}
     >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-yellow-900/20"></div>

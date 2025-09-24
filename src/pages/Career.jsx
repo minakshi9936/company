@@ -10,7 +10,7 @@ export default function Career() {
       {/* Background Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/src/assets/images/bg.png')" }}
+        style={{ backgroundImage: "url('/images/bg.png')" }}
       ></div>
 
       <div className="relative max-w-7xl mx-auto">

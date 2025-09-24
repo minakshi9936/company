@@ -10,7 +10,7 @@ export default function About() {
       {/* Overlay background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/src/assets/images/bg.png')" }}
+        style={{ backgroundImage: "url('/images/bg.png')" }}
       ></div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -70,7 +70,7 @@ export default function About() {
           </div>
           <div>
             <img
-              src="/src/assets/images/v.jpg"
+              src="/images/v.jpg"
               alt="About ABG Group"
               className="rounded-2xl shadow-lg border-4 border-yellow-500 hover:scale-105 transition-transform duration-500"
             />
