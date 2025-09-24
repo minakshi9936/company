@@ -114,25 +114,25 @@ export default function MapClients() {
   className="h-[420px] w-full rounded-xl overflow-hidden border-2 border-yellow-400"
 >
   <TileLayer
-    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a><a href="https://stadiamaps.com/"></a>'
-    subdomains={["a", "b", "c", "d"]}
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   />
 
   {clients.map((client) => (
     <Marker key={client.id} position={[client.lat, client.lng]}>
       <Popup>
-        <strong style={{ color: "blue" }}>{client.district}</strong>
+        <strong style={{ color: "black" }}>{client.district}</strong>
         <br />
         {client.pin !== "-" ? (
-          <span style={{ color: "blue" }}>PIN: {client.pin}</span>
+          <span style={{ color: "black" }}>PIN: {client.pin}</span>
         ) : (
-          <span style={{ color: "blue" }}>Multiple Areas</span>
+          <span style={{ color: "black" }}>Multiple Areas</span>
         )}
       </Popup>
     </Marker>
   ))}
 </MapContainer>
+
 
         </div>
 
