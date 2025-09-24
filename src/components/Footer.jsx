@@ -1,81 +1,179 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10 px-6">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-        
-        {/* Left Sections */}
-        <div className="flex flex-col md:flex-row gap-10">
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-lg mb-3">Services</h3>
-            <ul className="space-y-2">
-              <li><a href="/public/brochures/ABG HR Profile N.pdf" className="hover:text-gray-400">HR Consulting / IT Recruitment</a></li>
-              <li><a href="/public/brochures/Supply Service Brochure.pdf" className="hover:text-gray-400">Supply Service</a></li>
-              <li><a href="/public/brochures/Vishvam Profile.pdf" className="hover:text-gray-400">Facility Management</a></li>
-            </ul>
-          </div>
-
-          {/* Helpful Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-3">Helpful Links</h3>
-            <ul className="space-y-2">
-              <li><a href="/about" className="hover:text-gray-400">About Us</a></li>
-              <li><a href="/contact" className="hover:text-gray-400">Contact</a></li>
-              <li><a href="/career" className="hover:text-gray-400">Career</a></li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold text-lg mb-3">Legal</h3>
-            <ul className="space-y-2">
-              <li><a href="#privacy" className="hover:text-gray-400">Privacy Policy</a></li>
-              <li><a href="#terms" className="hover:text-gray-400">Terms & Conditions</a></li>
-              <li><a href="#cookies" className="hover:text-gray-400">Cookies Policy</a></li>
-            </ul>
-          </div>
+    <footer className="bg-black text-yellow-400 py-12 px-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-yellow-500/30 pb-10">
+        {/* Services */}
+        <div>
+          <h3 className="font-bold text-xl mb-4 border-b-2 border-yellow-400 inline-block pb-1">
+            Services
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>
+              <Link
+                to="./HR"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                HR Consulting / IT Recruitment
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="./Supply"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Supply Service
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://www.vishvamindia.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facility Management
+              </a>
+            </li>
+          </ul>
         </div>
 
-                {/* Company Profile */}
-        <div className="md:col-span-2">
-          <h3 className="text-lg font-semibold mb-4">Company Profile</h3>
+        {/* Helpful Links */}
+        <div>
+          <h3 className="font-bold text-xl mb-4 border-b-2 border-yellow-400 inline-block pb-1">
+            Helpful
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>
+              <Link
+                to="./About"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="./Contact"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="./Career"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Career
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h3 className="font-bold text-xl mb-4 border-b-2 border-yellow-400 inline-block pb-1">
+            Legal
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>
+              <a
+                href="#privacy"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="#terms"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a
+                href="#cookies"
+                className="hover:text-yellow-400 transition duration-300"
+              >
+                Cookies Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Company Profile */}
+        <div>
+          <h3 className="font-bold text-xl mb-4 border-b-2 border-yellow-400 inline-block pb-1">
+            Company Profile
+          </h3>
           <p className="text-gray-300 text-sm leading-relaxed">
-            <strong>Head Office:</strong> B114, Ground Floor, Sector 64, Noida - 201301 <br />
+            <strong>Head Office:</strong> B114, Ground Floor, Sector 64, Noida -
+            201301 <br />
             <strong>Phone:</strong> 7972867943 <br />
-            <strong>Email:</strong> neha@abggroup.in <br /><br />
-
+            <strong>Email:</strong> neha@abggroup.in <br />
           </p>
-        </div>
-
-        {/* Right Side Logo + Social Media */}
-        <div className="mt-8 md:mt-0 flex flex-col items-center md:items-end">
-          {/* Logo */}
-          <img src="/src/assets/logo2.png" alt="Company Logo" className="w-38 mb-4" />
-
-          {/* Social Icons */}
-          <div className="flex space-x-10">
-            <a href="https://www.facebook.com/abggroup.in/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
-              <FaFacebookF size={22} />
-            </a>
-            <a href="https://instagram.com/abggroup2020?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
-              <FaInstagram size={22} />
-            </a>
-            <a href="https://www.linkedin.com/company/abg-group2711/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaLinkedinIn size={22} />
-            </a>
-            <a href="https://wa.me/7972867943" target="_blank" rel="noopener noreferrer" className="hover:text-green-500">
-              <FaWhatsapp size={22} />
-            </a>
-          </div>
         </div>
       </div>
 
-      {/* Bottom Copyright */}
-      <div className="mt-8 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} YourCompany. All rights reserved.
+      {/* Bottom Section */}
+      <div className="mt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Logo */}
+        <img
+          src="/src/assets/logo2.png"
+          alt="Company Logo"
+          className="w-32 mb-4 md:mb-0"
+        />
+
+        {/* Social Icons */}
+        <div className="flex space-x-6">
+          <a
+            href="https://www.facebook.com/abggroup.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400 transition duration-300"
+          >
+            <FaFacebookF size={22} />
+          </a>
+          <a
+            href="https://instagram.com/abggroup2020?igshid=YmMyMTA2M2Y="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400 transition duration-300"
+          >
+            <FaInstagram size={22} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/abg-group2711/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400 transition duration-300"
+          >
+            <FaLinkedinIn size={22} />
+          </a>
+          <a
+            href="https://wa.me/7972867943"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400 transition duration-300"
+          >
+            <FaWhatsapp size={22} />
+          </a>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="mt-6 text-center text-gray-500 text-sm border-t border-yellow-500/20 pt-4">
+        © {new Date().getFullYear()} ABG Group. All rights reserved.
       </div>
     </footer>
   );

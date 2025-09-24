@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+.custom-btn {
+  @apply relative text-center border-2 border-yellow-500 bg-black text-yellow-400 
+         font-semibold text-xl py-6 pr-8 pl-12 rounded-r-3xl 
+         transition-transform duration-300 shadow-lg 
+         hover:bg-yellow-400 hover:text-black hover:shadow-yellow-500/50;
+  
+  /* Arrow shape */
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+}
+
+.custom-btn:hover {
+  transform: scale(1.08);
+}
+
+

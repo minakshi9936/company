@@ -32,37 +32,38 @@ export default function Client() {
     "/src/assets/Clients/27.jpg",
     "/src/assets/Clients/28.jpg",
     "/src/assets/Clients/29.png",
+    "/src/assets/Clients/30.jpg",
+    "/src/assets/Clients/31.png",
   ];
 
   // Duplicate the logos for infinite scrolling
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="relative bg-gradient-to-b from-orange-50 via-white to-orange-100 py-20 px-6 lg:px-24 overflow-hidden">
-      {/* Background Decorative Gradient Circles */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+    <section className="relative bg-black py-20 px-6 lg:px-24 overflow-hidden">
+      {/* Background Glowing Elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-yellow-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
 
       {/* Title */}
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-8 tracking-tight">
-        Our <span className="text-orange-500">Clients</span>
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center text-yellow-400 mb-6 tracking-wide drop-shadow-lg">
+        Our <span className="text-white">Clients</span>
       </h1>
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-        We are proud to have collaborated with amazing clients. Here are some of
-        the brands and companies we’ve worked with.
+      <p className="text-center text-gray-300 max-w-2xl mx-auto mb-16 text-lg">
+        We are proud to have collaborated with leading brands and companies across industries.
       </p>
 
       {/* Infinite Scrolling Carousel */}
       <div className="overflow-hidden relative">
         <motion.div
           className="flex gap-10 w-max"
-          animate={{ x: ["0%", "-50%"] }} // slide left continuously
+          animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
         >
           {duplicatedClients.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center w-40 h-28 bg-white/40 backdrop-blur-md shadow-lg rounded-2xl p-4"
+              className="flex items-center justify-center w-40 h-28 bg-yellow-400/10 border border-yellow-500/30 backdrop-blur-sm shadow-lg rounded-2xl p-4 hover:scale-105 hover:shadow-yellow-400/50 transition duration-300"
             >
               <img
                 src={logo}
