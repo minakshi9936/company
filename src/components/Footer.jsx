@@ -129,7 +129,7 @@ const Footer = () => {
       <div className="mt-8 flex flex-col md:flex-row justify-between items-center">
         {/* Logo */}
         <img
-          src="/src/assets/logo2.png"
+          src="/images/logo2.png"
           alt="Company Logo"
           className="w-32 mb-4 md:mb-0"
         />
